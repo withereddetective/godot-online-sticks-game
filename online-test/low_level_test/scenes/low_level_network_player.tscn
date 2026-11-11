@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ckphh4h2odmdg"]
+
+[ext_resource type="Script" uid="uid://4u48xr2niw3u" path="res://low_level_test/scripts/low_level_network_player.gd" id="1_hgcbu"]
+[ext_resource type="Texture2D" uid="uid://dlsm71m8r5me8" path="res://icon.svg" id="2_8fn21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(128, 128)
+
+[node name="LowLevelNetworkPlayer" type="CharacterBody2D" unique_id=774645514]
+script = ExtResource("1_hgcbu")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1697086990]
+texture = ExtResource("2_8fn21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=738710525]
+shape = SubResource("RectangleShape2D_g4v7s")

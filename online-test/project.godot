@@ -17,6 +17,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 HighLevelNetworkHandler="*uid://d4k4y2u74einu"
+LowLevelNetworkHandler="*uid://bam25yk27syek"
+ClientNetworkGlobals="*uid://b13aktthh78rd"
+ServerNetworkGlobals="*uid://bubsvuyrbdxi2"
 
 [display]
 

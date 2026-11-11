@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ckfled63ayljt"]
+
+[ext_resource type="PackedScene" uid="uid://dgpodoe5dvv8q" path="res://low_level_test/scenes/low_level_ui.tscn" id="1_b0oaf"]
+[ext_resource type="PackedScene" uid="uid://c1sncmxqlda22" path="res://low_level_test/scenes/low_level_player_spawner.tscn" id="2_ng76j"]
+
+[node name="LowLevelTest" type="Node2D" unique_id=616530545]
+
+[node name="LowLevelUI" parent="." unique_id=218719850 instance=ExtResource("1_b0oaf")]
+
+[node name="LowLevelPlayerSpawner" parent="." unique_id=1181476158 instance=ExtResource("2_ng76j")]
