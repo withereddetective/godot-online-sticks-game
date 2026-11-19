@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bdog6wes75yjk"]
+
+[ext_resource type="Script" path="res://sticks/scripts/main_menu.gd" id="1_script"]
+
+[node name="MainMenu" type="Control" unique_id=2143387740]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1252175254]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -280.0
+offset_right = 200.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2041092602]
+layout_mode = 2
+
+[node name="TitleText" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=221247088]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+bbcode_enabled = true
+text = "Sticks"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Instructions" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "A two-player hand-counting game"
+horizontal_alignment = 1
+
+[node name="SettingsButton1" type="CheckButton" parent="CenterContainer/VBoxContainer" unique_id=1386275713]
+layout_mode = 2
+text = "Hand is out on Exactly 5"
+
+[node name="SettingsButton2" type="CheckButton" parent="CenterContainer/VBoxContainer" unique_id=1631793894]
+layout_mode = 2
+text = "Splitting / combining uses your turn"
+
+[node name="SettingsButton3" type="CheckButton" parent="CenterContainer/VBoxContainer" unique_id=1763425349]
+layout_mode = 2
+text = "Hitting Yourself"
+
+[node name="AddressInput" type="LineEdit" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Host IP (for joining)"
+text = "127.0.0.1"
+
+[node name="PortInput" type="SpinBox" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 65535.0
+value = 42869.0
+prefix = "Port: "
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=888691586]
+layout_mode = 2
+text = "Host game"
+
+[node name="JoinButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Join game"
+
+[node name="StatusLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1

@@ -1,6 +1,7 @@
 extends Node
 
 signal handle_player_position(peer_id: int, player_position: PlayerPosition)
+signal handle_sticks_game_packet(peer_id: int, data: PackedByteArray)
 
 var peer_ids: Array[int]
 
@@ -24,5 +25,7 @@ func on_server_packet(peer_id: int, data: PackedByteArray) -> void:
 	match packet_type:
 		PacketInfo.PACKET_TYPE.PLAYER_POSITION:
 			handle_player_position.emit(peer_id, PlayerPosition.create_from_data(data))
+		PacketInfo.PACKET_TYPE.STICKS_GAME:
+			handle_sticks_game_packet.emit(peer_id, data)
 		_:
 			push_error("packet type with index ", data[0], " unhandled")

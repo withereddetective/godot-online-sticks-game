@@ -100,12 +100,25 @@ func start_client(ip_address: String = "127.0.0.1", port: int = 42869) -> void:
 	
 	print("client started")
 	server_peer = connection.connect_to_host(ip_address, port)
+	if server_peer == null:
+		push_error("client connection could not be created")
+		connection.destroy()
+		connection = null
 
 
 func disconnect_client() -> void:
 	if is_server: return
 	
 	server_peer.peer_disconnect()
+
+
+func stop_network() -> void:
+	if connection != null:
+		connection.destroy()
+	connection = null
+	server_peer = null
+	client_peers.clear()
+	is_server = false
 
 
 func connected_to_server() -> void:

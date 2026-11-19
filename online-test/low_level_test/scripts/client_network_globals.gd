@@ -3,6 +3,7 @@ extends Node
 signal handle_local_id_assignment(local_id: int)
 signal handle_remote_id_assignment(remote_id: int)
 signal handle_player_position(player_position: PlayerPosition)
+signal handle_sticks_game_packet(data: PackedByteArray)
 
 var id: int = -1
 var remote_ids: Array[int]
@@ -20,6 +21,9 @@ func on_client_packet(data: PackedByteArray) -> void:
 		
 		PacketInfo.PACKET_TYPE.PLAYER_POSITION:
 			handle_player_position.emit(PlayerPosition.create_from_data(data))
+
+		PacketInfo.PACKET_TYPE.STICKS_GAME:
+			handle_sticks_game_packet.emit(data)
 		
 		_:
 			push_error("packet type with index ", data[0], " unhandled")
